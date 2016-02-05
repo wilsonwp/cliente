@@ -59,7 +59,7 @@ angular.module('app')
          themeID: 1,
           navbarHeaderColor: localStorage.getItem('color1'),
           navbarCollapseColor: localStorage.getItem('color2'),
-          asideColor: localStorage.getItem('color3'),
+          asideColor: localStorage.getItem('color1'),
           headerFixed: true,
           asideFixed: false,
           asideFolded: false,

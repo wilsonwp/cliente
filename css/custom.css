@@ -296,7 +296,7 @@
 
 /*header*/
 .header_bg{
-	background-color: #bf1010;
+	background-color: #fff;
 }
 .header-logo
 {
@@ -515,3 +515,20 @@
 
 }
 
+/*Modal terminos y condiciones*/
+.modal-backdrop
+{
+z-index: 2147483647 !important;
+}
+.modal{
+   z-index: 2147483647 !important; 
+}
+/*inicio aplicacion global*/
+.global
+{
+    background-color: #f6f8f8 !important;
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    width: 100%;
+}

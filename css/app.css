@@ -736,7 +736,11 @@ body {
 }
 
 .app-content {
-  height: 100%;
+  background-color: #f6f8f8;
+    bottom: 0;
+    height: 100%;
+    min-height: 100%;
+    position: relative;
 }
 
 .app-content:before,
@@ -1079,7 +1083,7 @@ body {
 }
 
 html {
-  background: url('../img/bg.jpg');
+  background-color: #f6f8f8 !important;
   background-attachment: fixed;
   background-size: cover;
 }
