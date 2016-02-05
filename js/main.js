@@ -42,7 +42,7 @@ angular.module('app')
           
       }
       $scope.app = {
-        name: 'La Hinchada',
+        name: 'MasHincha',
         version: '1.3.3',
         // for chart colors
         color: {
@@ -59,7 +59,7 @@ angular.module('app')
          themeID: 1,
           navbarHeaderColor: localStorage.getItem('color1'),
           navbarCollapseColor: localStorage.getItem('color2'),
-          asideColor: localStorage.getItem('color1'),
+          asideColor: localStorage.getItem('color3'),
           headerFixed: true,
           asideFixed: false,
           asideFolded: false,
