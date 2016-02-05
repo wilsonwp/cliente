@@ -1,0 +1,48 @@
+    <div class="hbox hbox-auto-xs hbox-auto-sm" >
+           
+    
+    
+
+  <!-- .col -->
+  <div  class="col w-lg bg-light dk b-r bg-auto" id="aside">
+       <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+      <div class="wrapper bg b-b" ng-repeat="partido in partidos">
+        <button ng-click="show_timeline({{partido.id}})" class="btn btn-info btn-addon btn-partidos">
+          <div class="col w-lg2 separador_partido">
+            <span class="gol_local">{{partido.resultados.goles_local}}</span>
+            <i class="fa fa-soccer-ball-o juego_balon"   ng-hide=""></i>
+            <span class="gol_visitante">{{partido.resultados.goles_visitante}}</span>          
+          </div>
+          <div ng-repeat=" equipo in partido.equipos" class="col w-lg5 nombre_equipos_minuto ">               
+             <h5 class="m-n font-thin nombre_equipo">{{equipo.nombre_equipo}} </h5> <img class="logos_miniatura" src="http://localhost:8000/logos/{{equipo.path}}">
+          </div> 
+          
+        </button>
+
+    </div>
+    
+  </div>
+  <!-- /.col -->
+  <!-- .col -->
+  <div class="col">
+      <div class="wrapper" ng-show="formVisibility">
+      <ul class="timeline-center">
+         
+        
+        <div ng-repeat="comentario in comentarios | orderBy:'minuto':true" >
+            <div ng-bind-html="trustAsHtml(vistaComentario(comentario))"> </div>
+        </div>
+          
+
+        <li class="tl-header">
+          <div class="btn btn-info">Inicio de Patido</div>
+        </li>
+       
+       
+      </ul>
+    </div>
+  </div>
+
+  <!-- /.col -->   
+  
+</div>

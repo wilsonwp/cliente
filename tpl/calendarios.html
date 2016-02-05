@@ -1,0 +1,59 @@
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">Calendarios</h1>
+</div>
+
+  <div  class="col w-lg lt b-r">
+      <div class="vbox">
+          <div class="row-row">
+     
+      <div class="wrapper bg b-b" ng-repeat="campeonato in campeonatos">
+          <button ng-click="show_calendario({{campeonato.jornadas}})" class="btn btn-info btn-addon btn-partidos"><img class="logos_miniatura" src="http://localhost:8000/logos/{{campeonato.path}}">{{campeonato.nombre_campeonato}}</button>
+         
+          <div ng-repeat=" equipo in partido.equipos" class="col w-lg5 nombre_equipos_minuto ">               
+             <h5 class="m-n font-thin nombre_equipo">{{equipo.nombre_equipo}} </h5> <img class="logos_miniatura" src="http://localhost:8000/logos/{{equipo.path}}">
+          </div> 
+          
+        </button>
+
+    </div>
+              </div>
+    </div>
+  </div>
+      
+
+
+ 
+      <div class="wrapper" ng-show="formVisibility">
+     <div class="col">
+           <div class="vbox">
+      <div class="wrapper bg-light lt b-b">
+        <span class="text-muted">Jornadas:</span> <span></span>
+        <div class="panel panel-default" ng-repeat="jornada in jornadas|orderBy: 'numero':true">
+        <div class="panel-heading">Jornada No. {{jornada.numero}} Fecha: {{jornada.fecha}}</div>
+        <table class="table table-striped m-b-none">
+          <thead>
+            <tr>
+              <th style="width:60px;" class="text-center">Local</th>
+              <th>Visitante</th>                    
+              <th style="width:70px;"></th>
+            </tr>
+          </thead>
+          <tbody>      
+              <tr ng-repeat="partidos in jornada.partidos">                    
+              <td ng-repeat="equipos in partidos.equipos">
+                      <div><img class="logos_miniatura" src="http://localhost:8000/logos/{{equipos.path}}">{{equipos.nombre_equipo}}</div>
+              </td>
+              <td>
+                  {{partidos.resultados.goles_local}} - {{partidos.resultados.goles_visitante}}
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+       
+    </div>
+               
+    </div>
+    </div>
+

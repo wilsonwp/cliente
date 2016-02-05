@@ -1,0 +1,70 @@
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">Tablas de Posiciones</h1>
+</div>
+
+  <div  class="col w-lg lt b-r">
+      <div class="vbox">
+          <div class="row-row">
+     
+      <div class="wrapper bg b-b" ng-repeat="campeonato in campeonatos">
+          <button ng-click="show_tabla({{campeonato.equipos}})" class="btn btn-info btn-addon btn-partidos"><img class="logos_miniatura" src="http://localhost:8000/logos/{{campeonato.path}}">{{campeonato.nombre_campeonato}}</button>
+
+    </div>
+              </div>
+    </div>
+  </div>
+      
+
+
+ 
+      <div class="wrapper" ng-show="formVisibility">
+     <div class="col">
+           <div class="vbox">
+      <div class="wrapper bg-light lt b-b">
+        <span class="text-muted"></span> <span></span>
+        <div class="panel panel-default">
+        <table class="table table-striped m-b-none">
+          <thead>
+            <tr>
+              <th style="" class="text-center">EQUIPO</th>
+              <th class="text-center">PJ</th>                    
+              <th class="text-center">PG</th>
+              <th class="text-center">PE</th>
+              <th class="text-center">PP</th>                    
+              <th class="text-center" style="">GF</th>
+               <th class="text-center" style="">GC</th>
+            </tr>
+          </thead>
+          <tbody>      
+              <tr ng-repeat="equipo in equipos ">                    
+              <td class="text-center">
+              <img class="logos_miniatura" src="http://localhost:8000/logos/{{equipo.path}}">{{equipo.nombre_equipo}}
+              </td>  
+              <td class="text-center">
+                  {{equipo.pj}}
+              </td>
+              <td class="text-center">
+                  {{equipo.pg}}
+              </td>
+              <td class="text-center">
+                  {{equipo.pe}}
+              </td>
+              <td class="text-center">
+                  {{equipo.pp}}
+              </td>
+              <td class="text-center">
+                  {{equipo.gf}}
+              </td>
+              <td class="text-center">
+                  {{equipo.gc}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+       
+    </div>
+               
+    </div>
+    </div>
+

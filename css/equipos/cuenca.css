@@ -1,0 +1,67 @@
+/*color y texturas del club Deportivo Cuenca*/
+
+/*Base del menú*/
+.menu_fijo
+{
+	background-color: #8d1b00;
+}
+/*Base del menú para las lineas*/
+.menu_fijo .line
+{
+	background-color: #000;
+}
+.menu_lateral
+{
+	color:#fff;
+}
+/*para cada linea del menú*/
+.menu_lateral li
+{
+	
+}
+.menu_lateral li>a
+{
+	color:#fff !important;
+}
+.menu_lateral li:hover
+{
+	
+}
+.menu_lateral li:hover>a
+{
+	background-color: #dda714 !important;
+	color:#000 !important;
+}
+
+.menu_lateral li.active 
+{
+	background-color: #dda714 ;
+	color:#000 !important;
+}
+.menu_lateral li.active > a
+{
+	background-color: #dda714 !important;
+	color:#000 !important;
+}
+.menu_lateral li.active > a > i
+{
+	color:#000 !important;
+}
+/*Para el submenú*/
+.menu_lateral li.active>ul.nav-sub
+{
+	background-color: #000 !important;
+}
+
+
+/*Fondo para los botones de cada partido*/
+.btn-partidos
+{
+	background-color: #dda714 !important;
+	color:#000 !important;
+}
+.btn-partidos:hover
+{
+	background-color: #dda714 !important;
+	color:#000 !important;
+}

@@ -1,0 +1,149 @@
+<div id="video-container">
+  <video id="video_background" preload="auto" autoplay="autoplay" loop="true" class="class_video">
+    <source src="video/video.webm" type="video/webm">
+    <source src="video/video.mp4" type="video/mp4">
+    bgvideo
+  </video>
+</div>
+<div class="form_registrar_hincha">
+   <div class="" ng-controller="SignupFormController" ng-init="app.settings.container = false;">
+    
+      <a href class="navbar-brand block m-t"></a>
+      <div class="m-b-lg">
+          <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+           
+        <div class="wrapper text-center">
+          <strong></strong>
+        </div>
+    <form name="form" name="step" class="form-validation form_subir" enctype="multipart/form-data"> 
+          
+      <div class="wrapper-md">
+        <tabset class="tab-container tb_registro" ng-init="steps={percent:20, step1:true, step2:false, step3:false}">
+             <tab heading="Paso 1" active="steps.step" select="steps.percent=10">
+      <p class="m-b">Progreso de Registro.</p>
+      <progressbar value="steps.percent" class="progress-xs" type="success"></progressbar>
+      <h4>Datos de Acceso</h4>
+        <p>Email:</p>
+        <input type="email" name="email" placeholder="Email" class="form-control registro_input" ng-model="user.email" required ng-change="step.email.$valid ? (steps.percent=30) : (steps.percent=10)">
+        <p>Nombre:</p>
+        <input type="text" name="nombre" placeholder="Nombre" class="form-control registro_input" ng-model="user.nombre" required ng-change="step.nombre.$valid ? (steps.percent=30) : (steps.percent=10)">
+        <p>Telefono:</p>
+        <input type="text" name="telefono" placeholder="Telefono" class="form-control registro_input" ng-model="user.telefono" required ng-change="step.telefono.$valid ? (steps.percent=30) : (steps.percent=40)">
+        
+        <p>Fecha de Nacimiento:</p>
+        <div class="list-group-item nacimiento" ng-controller="DatepickerDemoCtrl">
+            <div class="input-group nacimiento">
+                <input type="text" placeholder="Fecha de Nacimiento" class="form-control registro_input" datepicker-popup="{{format}}" ng-model="user.fecha_nacimiento" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Cerrar" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </div>
+          </div>
+        <p>Sexo: </p>
+            Masculino:
+            <label class="i-switch bg-primary m-t-xs m-r masculino">
+                <input type="radio" name='switch' value="Masculino" ng-model="user.sexo" checked class="masculino">
+              <i></i>
+            </label>
+            Femenino:
+            <label class="i-switch bg-warning m-t-xs m-r femenino">
+                
+                <input type="radio" value="Femenino" ng-model="user.sexo" name='switch' class="femenino">
+              <i></i>
+            </label>
+            <p></p>
+        <p>Contraseña:</p>
+        
+                  <input type="password" placeholder="Contraseña" class="form-control registro_input" name="password" ng-model="user.password" required >   
+      <p> Repita Contraseña </p>
+                  <input type="password" placeholder="Repita Contraseña" class="form-control registro_input" name="confirm_password" required ng-model="confirm_password" ui-validate=" '$value==user.password' " ui-validate-watch=" 'password' ">
+                  <span ng-show='step1.confirm_password.$error.validator'>No Coinciden Valores</span>
+
+    
+       
+        
+        <div class="m-t m-b">
+          <button type="button" ng-disabled="step.$invalid" class="btn btn-lg btn-default btn_siguiente" ng-click="steps.step2=true">Siguiente</button>
+        </div>
+    </tab>
+    <tab heading="Paso 2" disabled="step1.$invalid" active="steps.step2" select="steps.percent=30">
+        <p class="m-b">Datos del Hincha</p>
+        <progressbar value="steps.percent" class="progress-xs" type="success"></progressbar>
+         <p>Foto para Mostrar:</p>
+<div class="wrapper-md" ng-controller="ImgCropCtrl">
+  <div class="m-b">
+    Seleccione Imagen para Mostrar en Perfil
+    <input type="file" id="fileInput" ng-model="user.path" file-model="user.path" />
+  </div>
+  <div class="hbox hbox-auto-xs">
+    <div class="col">
+      <div class="wrapper-sm b-a bg-white m-r-xs m-b-xs">
+        <div class="bg-light" style="height:320px">
+          <img-crop 
+            image="myImage" 
+            result-image="myCroppedImage"
+            result-image-size="160"
+            area-type="{{cropType}}"
+          ></img-crop>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="inline bg-white wrapper-sm b-a">
+        <div class="bg-light">
+          <img ng-src="{{myCroppedImage}}" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn-group m-t">
+      <label class="btn btn-default" ng-model="cropType" btn-radio="'circle'">Circulo</label>
+      <label class="btn btn-default" ng-model="cropType" btn-radio="'square'">Cuadrado</label>
+  </div>
+</div>
+        <div class="m-t m-b">
+          <button type="button" class="btn btn-lg btn-default btn_atras" ng-click="steps.step=true">Atras</button>
+          <button type="submit" ng-disabled="step2.$invalid" class="btn btn-lg btn-default btn_siguiente2" ng-click="steps.step3=true">Siguiente</button>
+        </div>
+    </tab>
+    <tab heading="Paso 3" disabled="step2.$invalid" active="steps.step3" select="steps.percent=60">
+      <p class="m-b">Ultimo Paso Terminos de Licencia.</p>
+      
+      <progressbar value="steps.percent" class="progress-xs" type="success"></progressbar>
+      <p>Equipo de Preferencia</p>
+      <select name="equipo_id" id="equipo_id" theme="bootstrap" class="form-control registro_input"  ng-model="user.equipo_id" style="min-width: 300px;">
+          <option value="{{equipo.id}}" ng-repeat="equipo in equipos">{{equipo.nombre_equipo}}</option>
+       </select>
+      <p>Licencia</p>
+      <div ng-controller="ModalDemoCtrl" class="panel b-a">
+          <script type="text/ng-template" id="myModalContent.html">
+            <div ng-include="'tpl/modal.html'"></div>
+          </script>
+          <div class="panel-heading b-b b-light">   <label class="i-checks">
+                  <script type="text/ng-template" id="myModalContent.html">
+                     <div ng-include="'tpl/licencia.html'"></div>
+                  </script>
+                  <input type="checkbox" ng-model="agree" required> <i></i>Acepto los <a class="font-bold" ng-click="open()">Terminos de Licencia</a> 
+            </label></div>
+      </div>
+      <p>Aceptar Terminos de Licencia para .</p>
+      <div class="m-t m-b">
+        <button type="button" class="btn btn-lg btn-default btn_atras" ng-click="steps.step2=true">Atras</button>
+        <button type="submit" class="btn btn-lg btn-default btn_siguiente2" ng-click="signup()" ng-disabled='form.$invalid' >Finalizar</button>
+      </div>
+    </tab>
+  </tabset>
+</div>
+          <div class="line line-dashed"></div>
+          <p class="text-center"><large><strong>Ya tienes Cuenta?</strong></large></p>
+          <a ui-sref="access.signin" class="btn btn-lg btn-default btn-block btn_crear_user">Entra</a>
+          
+          </form>
+       
+         
+      </div>
+    </div>
+
+</<div>
+    
+

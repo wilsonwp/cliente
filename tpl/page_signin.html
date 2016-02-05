@@ -1,0 +1,104 @@
+ <div class="m-app-loading" ng-animate-children >
+        <style type="text/css">
+            div.m-app-loading {
+                position: fixed ;
+            }
+            div.m-app-loading div.animated-container {
+                background-color: #333333 ;
+                bottom: 0px ;
+                left: 0px ;
+                opacity: 1.0 ;
+                position: fixed ;
+                right: 0px ;
+                top: 0px ;
+                z-index: 999999 ;
+            }
+     
+            div.m-app-loading div.animated-container.ng-leave {
+                opacity: 1.0 ;
+                transition: all linear 200ms ;
+                    -webkit-transition: all linear 200ms ;
+            }
+   
+            div.m-app-loading div.animated-container.ng-leave-active {
+                opacity: 0 ;
+            }
+            div.m-app-loading div.messaging {
+                color: #FFFFFF ;
+                font-family: monospace ;
+                left: 0px ;
+                margin-top: -37px ;
+                position: absolute ;
+                right: 0px ;
+                text-align: center ;
+                top: 50% ;
+            }
+            div.m-app-loading h1 {
+                font-size: 26px ;
+                line-height: 35px ;
+                margin: 0px 0px 20px 0px ;
+            }
+            div.m-app-loading p {
+                font-size: 18px ;
+                line-height: 14px ;
+                margin: 0px 0px 0px 0px ;
+            }
+        </style>
+        <div class="animated-container">
+
+            <div class="messaging">
+
+                <h1>
+                    Pantalla Cargando
+                </h1>
+
+                <p>
+                    Cargando Pantalla!
+                </p>
+
+            </div>
+
+        </div>
+        <!-- Finalizar Container Actual. -->
+
+    </div>
+<div id="video-container">
+  <video id="video_background" preload="auto" autoplay="autoplay" loop="true" class="class_video">
+    <source src="video/video.webm" type="video/webm">
+    <source src="video/video.mp4" type="video/mp4">
+    bgvideo
+  </video>
+</div>
+
+<div class="login container w-xxl w-auto-xs" ng-controller="SigninFormController" ng-init="app.settings.container = false;">
+  <a href class="navbar-brand block m-t"></a>
+  <div class="m-b-lg">
+  <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+
+
+      
+    <div class="wrapper text-center">
+      <strong></strong>
+    </div>
+    <form name="form" class="form-validation">
+    
+      <div class="list-group list-group-sm">
+        <div class="list-group-item">
+          <input type="email" placeholder="Email" class="form-control no-border login_input" ng-model="user.email" required>
+        </div>
+        <div class="list-group-item">
+           <input type="password" placeholder="Password" class="form-control no-border login_input" ng-model="user.password" required>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-lg btn-primary btn-block btn_iniciar" ng-click="login()" ng-disabled='form.$invalid'>Iniciar Sesión</button>
+      <img ng-if="form.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+      
+      <div class="text-center m-t m-b"><a ui-sref="access.forgotpwd">Olvidaste tu Contraseña?</a></div>
+      <div class="line line-dashed"></div>
+      <p class="text-center pregunta"><small>No tienes Cuenta?</small></p>
+      <a ui-sref="access.signup" class="btn btn-lg btn-default btn-block btn_crear_user">Crea una Cuenta</a>
+    </form>
+  </div>
+
+</div>
