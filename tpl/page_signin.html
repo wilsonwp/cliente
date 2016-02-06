@@ -1,23 +1,24 @@
- <div class="m-app-loading" ng-animate-children >
+<div class="m-app-loading" ng-animate-children >
         <style type="text/css">
             div.m-app-loading {
-                position: fixed ;
+                position: fixed;
+                z-index: 99999999999;
             }
             div.m-app-loading div.animated-container {
-                background-color: #333333 ;
+                background-color: #fff ;
                 bottom: 0px ;
                 left: 0px ;
-                opacity: 1.0 ;
-                position: fixed ;
+                /*opacity: 1.0 ;*/
+                position: fixed;
                 right: 0px ;
                 top: 0px ;
-                z-index: 999999 ;
+                z-index: 999999999999;
             }
      
             div.m-app-loading div.animated-container.ng-leave {
                 opacity: 1.0 ;
-                transition: all linear 200ms ;
-                    -webkit-transition: all linear 200ms ;
+                transition: all linear 17700ms ;
+                    -webkit-transition: all linear 17700ms ;
             }
    
             div.m-app-loading div.animated-container.ng-leave-active {
@@ -43,6 +44,10 @@
                 line-height: 14px ;
                 margin: 0px 0px 0px 0px ;
             }
+            .messaging h1{
+
+              color: #000 !important;
+            }
         </style>
         <div class="animated-container">
 
@@ -61,7 +66,7 @@
         </div>
         <!-- Finalizar Container Actual. -->
 
-    </div>
+</div>
 <div id="video-container">
   <video id="video_background" preload="auto" autoplay="autoplay" loop="true" class="class_video">
     <source src="video/video.webm" type="video/webm">
