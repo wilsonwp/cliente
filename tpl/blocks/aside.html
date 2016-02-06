@@ -8,7 +8,7 @@
       <div class="dropdown wrapper" dropdown>
         <a ui-sref="app.page.profile">
           <span class="thumb-lg w-auto-folded avatar m-t-sm">
-            <img src="http://localhost:8000/logos/{{usuario.foto}}" class="img-full" alt="{{usuario.nombre}}">
+            <img preload-image ng-src="http://localhost:8000/logos/{{usuario.foto}}" class="img-full" default-image="[URL]" fallback-image="[URL]" alt="{{usuario.nombre}}" />
             <img src="http://localhost:8000/logos/{{usuario.logo}}" class="img-full img-equipo-hincha" alt="...">
             <p>{{data.equipo.color1}}</p>
           </span>

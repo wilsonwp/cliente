@@ -16,5 +16,6 @@ angular.module('app', [
     'oc.lazyLoad',
     'pascalprecht.translate',
     'satellizer',
-    'ngLocale'
+    'ngLocale',
+    'angular-preload-image'
 ])
