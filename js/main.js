@@ -39,6 +39,9 @@ angular.module('app')
           nombre: localStorage.getItem('nombre'),
           logo: localStorage.getItem('logo_equipo'),
           foto: localStorage.getItem('path'),
+          color1: localStorage.getItem('color1'),
+          color2: localStorage.getItem('color2'),
+          color3: localStorage.getItem('color3')
           
       }
       $scope.app = {
