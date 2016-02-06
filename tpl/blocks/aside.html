@@ -10,13 +10,13 @@
           <span class="thumb-lg w-auto-folded avatar m-t-sm">
             <img preload-image ng-src="http://localhost:8000/logos/{{usuario.foto}}" class="img-full" default-image="[URL]" fallback-image="[URL]" alt="{{usuario.nombre}}" />
             <img src="http://localhost:8000/logos/{{usuario.logo}}" class="img-full img-equipo-hincha" alt="...">
-            <p>{{usuario.color1}}</p>
+            <p></p>
           </span>
         </a>
         <a href class="dropdown-toggle hidden-folded" dropdown-toggle>
           <span class="clear">
              
-              <strong class="font-bold text-lt">{{usuario.nombre}}</strong> 
+              <strong class="font-bold text-lt">{{usuario.color1}}{{usuario.nombre}}</strong> 
               <b class="caret"></b>
 
             <span class="text-muted text-xs block">{{usuario.email}}</span>
