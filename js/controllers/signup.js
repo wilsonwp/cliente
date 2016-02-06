@@ -15,8 +15,14 @@ app.controller('SignupFormController', ['$scope', '$http','$state','SignResource
     $scope.signup = function(resp) {
             console.log($scope.user);
             var uploadUrl='http://localhost:8000/hinchas';
+<<<<<<< HEAD
              $scope.format(uploadUrl,$scope.user);
            // $state.go('access.signin', {});
+=======
+            multipartForm.post(uploadUrl,$scope.user);
+            $state.go('access.signin', {});
+            $scope.pop();
+>>>>>>> 0dd728124a2c9b73cbc712adc9589194fba2e5d8
             
         
     }
