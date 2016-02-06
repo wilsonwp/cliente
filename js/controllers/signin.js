@@ -13,6 +13,9 @@ app.controller('SigninFormController', ['$scope', '$http','$location', '$state',
     (function initController() {
             // reset login status
             AuthenticationService.ClearCredentials();
+            if(localStorage.getItem('email')){
+                 $state.go('app.partidos', {});
+            }
         })();
     $scope.login = function() {
      $scope.form.dataLoading = true;   

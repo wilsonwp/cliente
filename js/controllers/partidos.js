@@ -10,6 +10,7 @@ app
     }
 })
 .controller('GetPartidosCtrl', function($scope,$sce,PartidosResource,$http,$timeout,$rootScope,toaster){
+    
     $scope.partidos={};
     $scope.comentarios={};
     $scope.texto='';
