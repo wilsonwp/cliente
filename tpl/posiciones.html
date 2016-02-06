@@ -17,50 +17,52 @@
 
 
  
-      <div class="wrapper" ng-show="formVisibility">
+  <div class="wrapper" ng-show="formVisibility">
      <div class="col w-lg12">
            <div class="vbox">
       <div class="wrapper bg-light lt b-b">
         <span class="text-muted"></span> <span></span>
-        <div class="panel panel-default">
-        <table class="table table-striped m-b-none">
-          <thead>
-            <tr>
-              <th style="" class="text-center">EQUIPO</th>
-              <th class="text-center">PJ</th>                    
-              <th class="text-center">PG</th>
-              <th class="text-center">PE</th>
-              <th class="text-center">PP</th>                    
-              <th class="text-center" style="">GF</th>
-               <th class="text-center" style="">GC</th>
-            </tr>
-          </thead>
-          <tbody>      
-              <tr ng-repeat="equipo in equipos ">                    
-              <td class="text-center">
-              <img class="logos_miniatura" src="http://localhost:8000/logos/{{equipo.path}}">{{equipo.nombre_equipo}}
-              </td>  
-              <td class="text-center">
-                  {{equipo.pj}}
-              </td>
-              <td class="text-center">
-                  {{equipo.pg}}
-              </td>
-              <td class="text-center">
-                  {{equipo.pe}}
-              </td>
-              <td class="text-center">
-                  {{equipo.pp}}
-              </td>
-              <td class="text-center">
-                  {{equipo.gf}}
-              </td>
-              <td class="text-center">
-                  {{equipo.gc}}
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="panel panel-default ">
+          <div class="table-responsive">
+            <table class="table table-striped m-b-none table">
+              <thead>
+                <tr>
+                  <th style="" class="text-center">EQUIPO</th>
+                  <th class="text-center">PJ</th>                    
+                  <th class="text-center">PG</th>
+                  <th class="text-center">PE</th>
+                  <th class="text-center">PP</th>                    
+                  <th class="text-center" style="">GF</th>
+                   <th class="text-center" style="">GC</th>
+                </tr>
+              </thead>
+              <tbody>      
+                  <tr ng-repeat="equipo in equipos ">                    
+                  <td class="text-center">
+                  <img class="logos_miniatura" src="http://localhost:8000/logos/{{equipo.path}}">{{equipo.nombre_equipo}}
+                  </td>  
+                  <td class="text-center">
+                      {{equipo.pj}}
+                  </td>
+                  <td class="text-center">
+                      {{equipo.pg}}
+                  </td>
+                  <td class="text-center">
+                      {{equipo.pe}}
+                  </td>
+                  <td class="text-center">
+                      {{equipo.pp}}
+                  </td>
+                  <td class="text-center">
+                      {{equipo.gf}}
+                  </td>
+                  <td class="text-center">
+                      {{equipo.gc}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
       </div>
        
     </div>
