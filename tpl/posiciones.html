@@ -2,9 +2,9 @@
   <h1 class="m-n font-thin h3">Tablas de Posiciones</h1>
 </div>
 
-  <div  class="col w-lg lt b-r">
+  <div  class="col w-lg12 lt b-r">
       <div class="vbox">
-          <div class="row-row">
+          <div class="row-row row_posicion">
      
       <div class="wrapper bg b-b" ng-repeat="campeonato in campeonatos">
           <button ng-click="show_tabla({{campeonato.equipos}})" class="btn btn-info btn-addon btn-partidos"><img class="logos_miniatura" src="http://localhost:8000/logos/{{campeonato.path}}">{{campeonato.nombre_campeonato}}</button>
@@ -18,7 +18,7 @@
 
  
       <div class="wrapper" ng-show="formVisibility">
-     <div class="col">
+     <div class="col w-lg12">
            <div class="vbox">
       <div class="wrapper bg-light lt b-b">
         <span class="text-muted"></span> <span></span>

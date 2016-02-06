@@ -296,7 +296,7 @@
 
 /*header*/
 .header_bg{
-	background-color: #bf1010;
+	background-color: #fff;
 }
 .header-logo
 {
@@ -497,6 +497,7 @@
 .menu_fijo
 {
 	position: fixed;
+    background-color: {{app.settings.asideColor}};
 }
 .menu_lateral
 {
@@ -515,3 +516,46 @@
 
 }
 
+/*Modal terminos y condiciones*/
+.modal-backdrop
+{
+z-index: 2147483647 !important;
+}
+.modal{
+   z-index: 2147483647 !important; 
+}
+/*inicio aplicacion global*/
+.global
+{
+    background-color: #f6f8f8 !important;
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+/*calendario*/
+.row_calendarios{
+
+    background-color: #333 !important;
+}
+.row_calendarios .wrapper
+{
+    float: left;
+}
+.row_calendarios .b-b {
+    border-bottom: none !important;
+}
+
+/*posiciones*/
+.row_posicion{
+
+    background-color: #333 !important;
+}
+.row_posicion .wrapper
+{
+    float: left;
+}
+.row_posicion .b-b {
+    border-bottom: none !important;
+}

@@ -42,7 +42,7 @@ angular.module('app')
           
       }
       $scope.app = {
-        name: 'La Hinchada',
+        name: 'MasHincha',
         version: '1.3.3',
         // for chart colors
         color: {
